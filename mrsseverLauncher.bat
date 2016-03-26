@@ -1,6 +1,6 @@
 @echo off
 title Mrs. Sever's WebLauncher
-color 9
+color 1b
 set /p chrome="Instructions: This batch file is a .bat that opens certain websites. The websites that open are google, gmail, google drive, gomath online, and Rishi's github page and the hsana website, along with MS PPT. Also on the GitHub page. Use the enter key to continue."
 set /p chrome="Enter your name: "
 @echo Starting Chrome...
@@ -11,6 +11,7 @@ start chrome https://mail.google.com/mail/u/0/#inbox
 @echo Started gmail.
 @echo Starting drive.google.com... (unshared)   
 start chrome https://drive.google.com/drive/
+color 1
 @echo Started drive.google.com
 @echo Starting hsana.org...
 start chrome https://hsana.org
