@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--		
+JS Decimals to Fractions Converter
+-->
+
+<head>
+  <title>Decimals - Fraction Converter</title>
+  <h1>Hi everyone who's viewing this page, and Hi 6D</h1>
+  <h2>
+  -Made by Rishi Vaka 6D
+  </h2> 
+  <h3>Made for Science Fair HSANA 2015 - 2016</h3>
+  <p>Click the button</p>
+
+<button onclick="myFunction()">Click me :D</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var person = prompt("Please enter your name", "");
+    
+    if (person != null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + person + "! Good morning. How are you doing today? How was your day? ";
+    }
+}
+</script>
+  <!--Begin Analytics-->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-47555464-1', 'featherly.net');
+    ga('send', 'pageview');
+  </script><!--End Analytics-->
+
+  <script type="text/javascript">
+    //<![CDATA[
+    function convertToFraction(decimal, numerator, denominator) {
+      var valueDecimal = parseFloat(decimal.value);
+
+      if (isNaN(valueDecimal))
+        return;
+
+      var fraction = Fraction({ decimal: valueDecimal });
+      numerator.value = fraction.getNumerator();
+      denominator.value = fraction.getDenominator();
+
+      reset();
+    }
+
+    function convertToDecimal(numerator, denominator, decimal) {
+      var valueNumerator = parseFloat(numerator.value);
+      var valueDenominator = parseFloat(denominator.value);
+
+      decimal.value = valueNumerator / valueDenominator;
+      reset();
+    }
+
+
+    var entryValidated;
+
+
+    function isNumberKey(evt, currentValue) {
+      entryValidated = true;
+
+
+      var charCode = (evt.which) ? evt.which : event.keyCode;
+
+      var isDigit = (charCode >= 48 && charCode <= 57);
+      var validDecimal = (charCode == 46 && evt.srcElement.value.indexOf(".") == -1);
+      var isPrintable = charCode > 31;
+
+      if (isDigit == false && validDecimal == false && isPrintable)
+        return false;
+
+      return true;
+    }
+
+
+    function cleanPaste(textbox) {
+      if (entryValidated)
+        return;
+      textbox.value = textbox.value.replace(/[^\d\.]/g, "")
+        .replace(/\./, "x")
+        .replace(/\./g, "")
+        .replace(/x/, ".");
+    }
+
+
+    function reset() {
+      entryValidated = false;
+    }
+
+    var Fraction = function (options) {
+      var decimal = options.decimal;
+      var numerator;
+      var denominator;
+      var significantMax = 12; 
+      var fraction = {};
+
+      fraction.getNumerator = function () {
+        return numerator;
+      };
+
+      fraction.getDenominator = function () {
+        return denominator;
+      };
+
+      var calculateFraction = function () {
+        var precision = getPrecision();
+
+        var fractionalPart = decimal - Math.floor(decimal);
+        if (fractionalPart > precision) {
+          getFraction(precision, fractionalPart);
+
+          
+          numerator = Math.floor(decimal) * denominator + numerator;
+        }
+        else {
+          numerator = Math.floor(decimal);
+          denominator = 1;
+        }
+
+      };
+
+      var getFraction = function (precision, fractionalPart) {
+        var numeratorDelta = 0;
+        var denominatorDelta = 0;
+        var numeratorPivot;
+        var denominatorPivot;
+        var wasGreater;
+
+       
+        numerator = 1;
+        denominator = 2;
+
+        var updateTraversal = function () {
+          
+          numeratorPivot = numerator;
+          denominatorPivot = denominator;
+
+          
+          numerator += numeratorDelta;
+          denominator += denominatorDelta;
+
+          
+          return fractionalPart - (numerator / denominator)
+        }
+        var diff = updateTraversal();
+
+        
+        if (diff < 0) 
+        {
+          numeratorDelta = 0;
+          denominatorDelta = 1;
+          wasGreater = false;
+        }
+        else if (diff > 0) 
+        {
+          numeratorDelta = 1;
+          denominatorDelta = 1;
+          wasGreater = true;
+        }
+        diff = updateTraversal();
+
+        
+        while (diff < -1 * precision || diff > precision) {
+          if (diff < 0) 
+          {
+            if (wasGreater) 
+            {
+              numeratorDelta = numeratorPivot;
+              denominatorDelta = denominatorPivot;
+            }
+            wasGreater = false;
+          }
+          else if (diff > 0) 
+          {
+            if (!wasGreater) 
+            {
+              numeratorDelta = numeratorPivot;
+              denominatorDelta = denominatorPivot;
+            }
+            wasGreater = true;
+          }
+          diff = updateTraversal();
+        }
+      }
+
+      var getSignificantDigits = function () {
+        var decimalAsString = decimal.toString();
+        var significantDigits = decimalAsString.length - decimalAsString.indexOf(".") - 1;
+        return (significantDigits > 1 ? significantDigits : 2);  
+      };
+
+      var getPrecision = function () {
+        var precision = 1 / Math.pow(10, getSignificantDigits());
+        var precisionMax = 1 / Math.pow(10, significantMax);
+
+        if (precision < precisionMax) 
+          return precisionMax;
+        else
+          return precision;
+      };
+
+      calculateFraction();
+      return fraction;
+    }
+    //]]>
+  </script>
+
+<style>
+#div1 {width:85px;height:85px;padding:10px;border:1px solid #ffffff;}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<img src="https://i.imgur.com/dtS14cI.png" alt="" width="42" height="42">
+
+
+<p>Drag the Rishi image into the rectangle:</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://i.imgur.com/LOc5x4y.png" draggable="true" ondragstart="drag(event)" width="85" height="85" align="left">>
+
+  <style>
+    html {
+      background-color: #0099FF;
+      color: #459;
+      text-align: center;
+    }
+
+    input {
+      background: White;
+      border: 1px double #DDD;
+      padding: 5px 10px;
+      font-size: 300%;
+      Width: 6em;
+    }
+
+    .note {
+      padding-bottom: 30px;
+      color: grey;
+      font-size: 80%;
+    }
+
+    /* symbols seperate text boxes */
+    .symbol {
+      font-weight: bolder;
+      font-size: 300%;
+    }
+
+    #wrap {
+      width: 82%;
+      margin: 0 auto;
+    }
+
+    #left_col {
+      float: left;
+      width: 40%;
+    }
+
+    #center_col {
+      display: inline-block;
+      width: 2%;
+    }
+
+    #right_col {
+      float: right;
+      width: 40%;
+    }
+  </style>
+</head>
+<script>
+</script>
+<body>
+  <form id="body">
+    
+    <p>2015 - 2016</p>
+	<p>Type in a number in decimal value, denominator value and numerator value in order to get an answer. The answer will be in the box you didn't type any numbers in.</p>
+    <div id="wrap">
+      <div id="left_col">
+        <br /><br /><br /><br />
+        <input type="text" id="decimal" placeholder="decimal value"
+               onkeypress="return isNumberKey(event, this.value)"
+               onfocus="cleanPaste(this);convertToFraction(this, document.getElementById('numerator'), document.getElementById('denominator'))"
+               oninput="cleanPaste(this);convertToFraction(this, document.getElementById('numerator'), document.getElementById('denominator'))" />
+      </div>
+      <div id="center_col">
+        <br /><br /><br /><br />
+        <span class="symbol">&#x2248;</span>
+      </div>
+      <div id="right_col">
+        <input type="text" id="numerator" placeholder="numerator value"
+               onkeypress="return isNumberKey(event, this.value)"
+               oninput="cleanPaste(this);convertToDecimal(this, document.getElementById('denominator'), document.getElementById('decimal'))" />
+        <p>____________________________________________</p>
+        <input type="text" id="denominator" placeholder="denominator value"
+               onkeypress="return isNumberKey(event, this.value)"
+               oninput="cleanPaste(this);convertToDecimal(document.getElementById('numerator'), this, document.getElementById('decimal'))" />
+        <br />
+      </div>
+    </div>
+  </form>
+</body>
+</html>
