@@ -1,0 +1,133 @@
+<!user - RVAKA
+project name - yahoo login program site>
+<html>
+  <head>
+  	<!-- core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" /><link href="./css/font-awesome.min.css" rel="stylesheet" /><link href="./css/animate.min.css" rel="stylesheet" /><link href="./css/lel.css" rel="stylesheet" /><link href="./css/main_source.css" rel="stylesheet" /><link href="./css/responsive.css" rel="stylesheet" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" /><link href="./css/sortable-theme-bootstrap.css" rel="stylesheet" /><link href="./css/style_slider.css" rel="stylesheet" />
+    
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="favicon.png /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png" /><link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png" />
+    
+    <style type="text/css">
+       @media print {
+            a[href]:after {
+                content: none !important;
+            }
+        } 
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Yahoo Login
+</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.png">
+  </head>
+  <body>
+<div id="mbr-login-box" class="mbr-login-box  no-partner">
+        <!-- Y LOGO HERE -->
+        <div class="mbr-login-logo">
+                        <img src="https://s1.yimg.com/rz/d/yahoo_en-US_f_p_bestfit_2x.png" alt="Yahoo logo">
+        </div>
+
+        
+        
+        <div class="boxed">
+                <center> <strong>   <div id="mbr-login-greeting" class="mbr-login-signin-hd pure-u-1 mbr-overflow-ellipsis">
+                Sign in            </div> </strong> </center>
+        
+        
+        
+        <!-- SIGNIN FORM -->
+
+                        
+                        <!-- username -->
+                        <i><label for="login-username" class="mbr-hide"><i>Email Address:</i>
+						
+						</label></i>
+
+                        
+   <center>                     <input name="username" id="login-username" class="login-input
+                             pure-u-1 " type="text" maxlength="96" tabindex="1" aria-required="true" value="" placeholder="Enter your email" title="Enter your email" autocorrect="off" spellcheck="false" autofocus="">
+</center>
+                        <div id="login-username-error" class="error-box username-error pure-u-1 mbr-text-align mbr-hide" role="alert"></div>
+
+                                                                    </div>
+
+                    <div class="mbr-login-username-tips">
+                                            </div>
+
+                    
+                    
+                    <div id="passwd-field" class="passwd-field mbr-hide">
+
+                        
+                        <label for="login-passwd" class="mbr-hide"><i><p style=”padding:6px; color: grey; background-color: white; border: black 2px solid”>Password</p></i></label>
+<center>                        <input name="passwd" id="login-passwd" class="login-input  pure-u-1" type="password" maxlength="64" tabindex="-1" aria-hidden="true" role="presentation" placeholder="Password" title="Password" autocorrect="off">
+                        <div id="odp-pw-desc" class="odp-pw-desc mbr-text-align mbr-hide"> </center>
+                            Click continue to sign in.                        </div>
+                    </div>
+                </div>
+
+                                <div id="mbr-login-error" class="mbr-login-error mbr-text-align pure-u-1 mbr-hide">                </div>
+
+                
+                                <div id="submits" class="mbr-login-submit ">
+                  <center>  <button id="login-signin" name="signin" type="submit" class="pure-u-1 pure-button mbr-button-primary" value="authtype" tabindex="4">Next</button> </center>
+                </div> </div>
+
+                                                          <center>  <strong> <div class="stay-signin-in pure-g">
+                                                            <div id="persistency" class="pure-u-1-2 mbr-checkbox ">
+                                    <div class="mbr-text-align mbr-login-text-normal">
+                                                                                <input id="persistent" name=".persistent" value="y" class="checkbox" type="checkbox" tabindex="3" checked="">
+                                        <label for="persistent">Stay signed in (uncheck if you do not wish to be signed after this session)</label> </strong> </center>
+                                    </div>
+                                </div>
+                            
+                                                            <div class="pure-u-1-2 mbr-text-align-reverse">
+                                </div>
+                                                    </div>
+                    
+                                    
+                <div id="hiddens" class="hidden">
+                    <input name="_crumb" type="hidden" value="SwWNJYVM6NY">
+                    <input name="_ts" type="hidden" value="1469388467">
+                    <input name="_format" type="hidden" value="">
+                    <input name="_uuid" type="hidden" value="zRtO5QfPpiMx">
+                    <input name="_seqid" type="hidden" value="2">
+                                                                <input type="hidden" name="otp_channel" value="">
+                                    </div>
+
+                <!-- popup -->
+                <div class="mbr-login-popup-container">
+                                        <div id="mbr-login-popup" class="mbr-login-popup mbr-hide">
+                        <div class="yui3-widget-hd mbr-text-align"></div>
+                        <div class="yui3-widget-bd mbr-text-align pure-g"></div>
+                    </div>
+                                    </div>
+            </form>
+
+            
+
+        </fieldset>
+
+                 <i>   <div class="tsl-message">
+                To sign in, enter your email and click "Next"            </div> </i>
+        
+        
+                                    
+
+                            
+            </div>
+			</head>
+			</html>
