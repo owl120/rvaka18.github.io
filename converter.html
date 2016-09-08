@@ -326,7 +326,7 @@ function drop(ev) {
       <input type="text" id="numerator" placeholder="numerator value"
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(this, document.getElementById('denominator'), document.getElementById('decimal'))" />
-        <p>______________________________</p>
+        <hr>
        <input type="text" id="denominator" placeholder="denominator value" 
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(document.getElementById('numerator'), this, document.getElementById('decimal'))" />
