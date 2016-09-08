@@ -323,11 +323,11 @@ function drop(ev) {
         <span class="symbol">&#x2248;</span>
       </div>
       <div id="right_col">
-      <p>  <input type="text" id="numerator" placeholder="numerator value"</p>
+      <input type="text" id="numerator" placeholder="numerator value"
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(this, document.getElementById('denominator'), document.getElementById('decimal'))" />
         <p>______________________________</p>
-    <p>    <input type="text" id="denominator" placeholder="denominator value" </p>
+       <input type="text" id="denominator" placeholder="denominator value" 
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(document.getElementById('numerator'), this, document.getElementById('decimal'))" />
         <br />
