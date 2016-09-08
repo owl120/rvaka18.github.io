@@ -276,7 +276,7 @@ function drop(ev) {
       font-size: 80%;
     }
 
-    /* symbols seperate text boxes */
+    <!-- symbols seperate text boxes -->
     .symbol {
       font-weight: bolder;
       font-size: 300%;
@@ -323,11 +323,11 @@ function drop(ev) {
         <span class="symbol">&#x2248;</span>
       </div>
       <div id="right_col">
-        <input type="text" id="numerator" placeholder="numerator value"
+      <p>  <input type="text" id="numerator" placeholder="numerator value"</p>
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(this, document.getElementById('denominator'), document.getElementById('decimal'))" />
-        <p>____________________________________________</p>
-        <input type="text" id="denominator" placeholder="denominator value"
+        <p>______________________________</p>
+    <p>    <input type="text" id="denominator" placeholder="denominator value" </p>
                onkeypress="return isNumberKey(event, this.value)"
                oninput="cleanPaste(this);convertToDecimal(document.getElementById('numerator'), this, document.getElementById('decimal'))" />
         <br />
