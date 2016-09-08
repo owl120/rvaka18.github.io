@@ -27,23 +27,23 @@ font-family: 'PT Sans Narrow', sans-serif;
 	<link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">
   <title>Decimals - Fraction Converter</title>
   <h1>Hi everyone who's viewing this page,</h1>
-  <h2>
-  -Made by Rishi Vaka 6D/7C
-  </h2> 
-  <h3>Made for Science Fair HSANA 2015 - 2016 (a long time ago)</h3>
+  <h5>
+ <i> -Made by Rishi Vaka </i><u>6D/7C</u>
+  </h5> 
+  <p>Made for Science Fair HSANA 2015 - 2016 (a long time ago)</h3>
   <p>Click the button</p>
 
-<button onclick="myFunction()">Click me :D</button>
+<button onclick="myFunction()">Click me for instructions</button>
 
 <p id="demo"></p>
 
 <script>
 function myFunction() {
-    var person = prompt("Please enter your name", "");
+    var person = prompt("Please enter your name for further instructions", "");
     
     if (person != null) {
         document.getElementById("demo").innerHTML =
-        "Hello " + person + "! Read the instructions below in order to properly use this converter.";
+        "Hello " + person + "! Read the instructions below in order to properly use this converter. <br> Type in a number in decimal value, denominator value and numerator value in order to get an answer. The answer will be in the box you didn't type any numbers in.<hr>";
     }
 }
 </script>
