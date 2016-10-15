@@ -1,0 +1,419 @@
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, #submit-answer:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-    input:focus {
+    border-color: crimson;
+    box-shadow: 0 0 2px crimson;
+    outline: 0;
+}
+
+body {
+  padding: 0;
+  font-family: "Myriad Pro" !important;
+  background: url(../img/background.jpg) !important;
+  background-repeat: repeat;
+
+  min-width: 900px;
+}
+
+
+#title {
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+#title > img {
+  height: 100px;
+  display: inline;
+  margin-top: -35px;
+}
+
+#settings-and-stats {
+  text-align: center;
+  width: 780px;
+  min-width: 780px;
+}
+
+#settings {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  float: left;
+  height: 215px;
+}
+
+#stats {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  width: 260px;
+  height: 215px;
+}
+
+#stats .sharefb {
+}
+
+#stats > p {
+  margin: 0;
+}
+
+#results {
+  display: none;
+}
+
+#results .description {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+#results .score {
+  color: crimson;
+  font-weight: bold;
+  display: block;
+  font-size: 26pt;
+  padding: 0;
+}
+
+#results img.info {
+  height: 20px;
+  cursor: pointer;
+}
+
+#bonus-list {
+  color: #777;
+  font-size: 14pt;
+  text-align: right;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#bonus-list tr.large {
+  font-size: 30pt;
+}
+
+
+#bonus-list tr.large td {
+  padding-top: 50px;
+}
+
+#bonus-list .separator {
+  height: 2px;
+  background: #777;
+}
+
+#bonus-list .summary {
+  font-weight: bold;
+}
+
+#start-quiz {
+  display: none;
+  margin-top: 100px;
+}
+
+#submit-answer {
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+.white-box {
+  webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(1, 1, 1, 0.2);
+  -moz-box-shadow: 0 1px 1px rgba(1, 1, 1, 0.2);
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  padding-top: 20px;
+  background: none !important;
+}
+
+.jumbotron > .container > div {
+  /*text-align: center;*/
+}
+
+.jumbotron h1 {
+  text-align: center;
+  display: inline-block;
+  font-family: "Myriad Pro";
+  font-size: 63px;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+h2 {
+  font-size: 18pt !important;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+#emotions-left {
+  float: left;
+  color: green;
+}
+
+#emotions-right {
+  float: right;
+  color: darkorange;
+}
+
+#questionbox {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#questionbox .jumbotron {
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+}
+
+#question-section {
+  width: 750px;
+  margin: 0 auto;
+  padding-right: 50px;
+}
+
+#time-left, #repeat {
+  font-size: 80pt;
+  display: inline-block;
+}
+
+#time-left-text, #repeat-text {
+  display: block;
+  margin-top: -40px;
+  color: #777;
+}
+
+#time-left-indicator {
+  display: block;
+  height: 3px;
+  width: 0%;
+  background: crimson;
+}
+
+#repeat-box {
+  cursor: pointer;
+  display: none;
+}
+
+#repeat-box img {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 1s
+}
+
+#repeat-box:hover img {
+   -webkit-animation-name: rotate; 
+  -webkit-animation-duration: 2s; 
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: rotate; 
+  -moz-animation-duration: 2s; 
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(360deg);}
+}
+
+#repeat {
+  margin-top: 20px;
+}
+
+#repeat-text {
+  margin-top: 0;
+}
+
+a {
+  color: crimson;
+}
+
+a:hover {
+  color: darkred;
+  text-decoration: none;
+}
+
+#question {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+#answerbox {
+  width: 100%;
+}
+
+#answerbox > .input-group {
+  width: 200px;
+  display: inline-table;
+}
+
+#math-range-slider {
+  margin-left: 40px;
+  width: 300px;
+  margin-right: 40px;
+}
+
+#math-range-slider .noUi-handle {
+  box-shadow: none;
+}
+
+
+.nobullets {
+  list-style-type: none;
+}
+
+footer {
+  text-align: right;
+  position: absolute;
+  right: 20%;
+  bottom: 10px;
+}
+
+footer > p {
+  float: left;
+  padding: 0 20px;
+}
+
+
+.noUi-connect {
+  background: crimson;
+  box-shadow: none !important;
+}
+
+#text-operations {
+  margin-bottom: 5px;
+  padding-top: 2.5px;
+}
+
+#text-selectrange {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#div-operations {
+  text-align: left;
+  margin-left: 20px;
+}
+
+#div-operations > ul {
+  float: left;
+  margin-bottom: 0;
+}
+
+#viewport {
+  position: absolute;
+  top: 300px;
+}
+
+#social-container {
+  width: 100%;
+}
+
+#social-buttons {
+    height: 300px;
+    transition:             opacity 1000ms ease;
+        -moz-transition:    opacity 1000ms ease;
+        -ms-transition:     opacity 1000ms ease;
+        -o-transition:      opacity 1000ms ease;
+        -webkit-transition: opacity 1000ms ease;
+    width: 90px;
+}
+
+.fb-like, .g-plusone-frame {
+    margin: 10px 0 10px 3px;   
+}
+
+.g-plusone-frame {
+    display: inline-block;
+}
+
+.twitter-share-button {
+    margin: 10px 0;
+}
+
+/* slider ends (where the numbers are) are named such by the library */
+#math-range-slider .tooltip {
+  display: block;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  font: 400 12px/12px Arial;
+  border-radius: 3px;
+  background: #fff;
+  top: -3px;
+  padding: 5px;
+  padding-top: 9px;
+  left: -9px;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  opacity: 1;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#facebookshare {
+  height: 23px;
+  cursor: pointer;
+  
+}
+
+/* hide github banner on small screens */
+@media only screen and (min-width:0px) and (max-width:786px){ 
+  #github-forkme img {
+    display: none;
+  }
+}
+
+#github-forkme img {
+  position: absolute;
+  width: 150px;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.not-visible {
+  display: none !important;
+}
+
+
+#android-apps {
+  position: absolute;
+  right: 0;
+  bottom: 30%;
+}
+
+#android-apps p {
+  margin: 30px 0;
+}
+
+#android-apps .title {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
