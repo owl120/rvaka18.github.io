@@ -31,6 +31,6 @@ function toEng(word){
 		return $(definitions[i]);
 		}
 	}
-	console.error("MEOWWW!");
+	console.error("Rawr...");
 	return null;
 }
