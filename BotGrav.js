@@ -45,6 +45,6 @@ for(var i=0;i<data.terms.length;i++){
 		return data.terms[i].definition;
 	}
 }
-console.error("MEOWW!!");
+console.error("Rawr!!!!!!!!!!");
 return "MEOW! MEOW!!";
 }
