@@ -1,9 +1,5 @@
 <html>
 <head>
-<frameset rows="75%, 25%">
-  <frame src="/eidoo/feedback.html">
-  <frame src="/eidoo/indexa.html">
-</frameset>
       <style type="text/css">
        @media print {
             a[href]:after {
@@ -29,14 +25,6 @@ font-family: 'PT Sans Narrow', sans-serif;
       text-align: center;
     }
 
-    input {
-      background: Green;
-      border: 1px double #DDD;
-      padding: 5px 10px;
-      font-size: 50%;
-      Width: 6em;
-    }
-
     .note {
       padding-bottom: 30px;
       color: grey;
@@ -53,7 +41,19 @@ font-family: 'PT Sans Narrow', sans-serif;
 <center><h4><i>OR</i></h4></center>
 <p>Use the feedback box!</p>
 <!-- start feedback box-->
-<input form= width="400">
+<form action="mailto:rishikeshvaka@gmail.com" method="post">
+First name:
+<input type="text" name="firstname"><br>
+Last name:
+<input type="text" name="lastname"><br>
+Age:
+<input type="text" name="age">
+<br>
+Email:
+<input type="text" name="mail"><br>
+<input type="submit" name="submit" formaction="/eidoo/feed.txt"/>
+<input type="reset">
+</form>
 <!-- end feedback box-->
 
 
