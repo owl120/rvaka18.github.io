@@ -171,6 +171,7 @@ input[type=checkbox].rv-check:disabled+.rv-validate,input[type=radio].rv-radio:d
 .rv-left{float:left!important}.rv-right{float:right!important}
 .rv-tiny{font-size:10px!important}.rv-small{font-size:12px!important}
 .rv-medium{font-size:15px!important}.rv-large{font-size:18px!important}
+.rv-joe{font-size:22px!important}.rv-joe{font-size:25px!important}
 .rv-xlarge{font-size:24px!important}.rv-xxlarge{font-size:36px!important}
 .rv-xxxlarge{font-size:48px!important}.rv-jumbo{font-size:64px!important}
 .rv-vertical{word-break:break-all;line-height:1;text-align:center;width:0.6em}
